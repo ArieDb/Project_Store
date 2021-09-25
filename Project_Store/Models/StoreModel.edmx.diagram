@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3b2f8a53d0314cf3b59e5449a17f0caa" Name="Diagram1">
+        <EntityTypeShape EntityType="storeModel.appointment" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.buy_supplier" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.customer" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.product" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.reservation" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.seller" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.supplier" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="storeModel.FK_appointment_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="storeModel.FK_appointment_product" ManuallyRouted="false" />
+        <AssociationConnector Association="storeModel.FK_appointment_seller" ManuallyRouted="false" />
+        <AssociationConnector Association="storeModel.FK_buy_supplier_product" ManuallyRouted="false" />
+        <AssociationConnector Association="storeModel.FK_buy_supplier_supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="storeModel.FK_reservation_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="storeModel.FK_reservation_product" ManuallyRouted="false" />
+        <AssociationConnector Association="storeModel.FK_reservation_seller" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
