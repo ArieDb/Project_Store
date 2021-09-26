@@ -84,3 +84,7 @@ C:\Users\USUARIO\source\repos\Project_Store\Project_Store\obj\Debug\Project_Stor
 C:\Users\USUARIO\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.csproj.CopyComplete
 C:\Users\USUARIO\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.dll
 C:\Users\USUARIO\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.pdb
+C:\Users\USUARIO\source\repos\Project_Store\Project_Store\bin\EntityFramework.dll
+C:\Users\USUARIO\source\repos\Project_Store\Project_Store\bin\EntityFramework.SqlServer.dll
+C:\Users\USUARIO\source\repos\Project_Store\Project_Store\bin\EntityFramework.xml
+C:\Users\USUARIO\source\repos\Project_Store\Project_Store\bin\EntityFramework.SqlServer.xml

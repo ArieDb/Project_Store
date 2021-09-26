@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="storeModelStoreContainer" CdmEntityContainer="storeEntities">
+    <EntitySetMapping Name="appointment">
+      <EntityTypeMapping TypeName="storeModel.appointment">
+        <MappingFragment StoreEntitySet="appointment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="buy_supplier">
+      <EntityTypeMapping TypeName="storeModel.buy_supplier">
+        <MappingFragment StoreEntitySet="buy_supplier">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit_value" ColumnName="unit_value" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="storeModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="identification_type" ColumnName="identification_type" />
+          <ScalarProperty Name="document_number" ColumnName="document_number" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="storeModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code_product" ColumnName="code_product" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reservation">
+      <EntityTypeMapping TypeName="storeModel.reservation">
+        <MappingFragment StoreEntitySet="reservation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit_value" ColumnName="unit_value" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seller">
+      <EntityTypeMapping TypeName="storeModel.seller">
+        <MappingFragment StoreEntitySet="seller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplier">
+      <EntityTypeMapping TypeName="storeModel.supplier">
+        <MappingFragment StoreEntitySet="supplier">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="business_name" ColumnName="business_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="storeModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_appointment_customer" TypeName="storeModel.FK_appointment_customer" StoreEntitySet="appointment">
+      <EndProperty Name="customer">
+        <ScalarProperty Name="id" ColumnName="id_customer" />
+      </EndProperty>
+      <EndProperty Name="appointment">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_customer" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_appointment_product" TypeName="storeModel.FK_appointment_product" StoreEntitySet="appointment">
+      <EndProperty Name="product">
+        <ScalarProperty Name="id" ColumnName="id_product" />
+      </EndProperty>
+      <EndProperty Name="appointment">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_product" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_appointment_seller" TypeName="storeModel.FK_appointment_seller" StoreEntitySet="appointment">
+      <EndProperty Name="seller">
+        <ScalarProperty Name="id" ColumnName="id_seller" />
+      </EndProperty>
+      <EndProperty Name="appointment">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_seller" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_buy_supplier_product" TypeName="storeModel.FK_buy_supplier_product" StoreEntitySet="buy_supplier">
+      <EndProperty Name="product">
+        <ScalarProperty Name="id" ColumnName="id_product" />
+      </EndProperty>
+      <EndProperty Name="buy_supplier">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_product" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_buy_supplier_supplier" TypeName="storeModel.FK_buy_supplier_supplier" StoreEntitySet="buy_supplier">
+      <EndProperty Name="supplier">
+        <ScalarProperty Name="id" ColumnName="id_supplier" />
+      </EndProperty>
+      <EndProperty Name="buy_supplier">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_supplier" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_reservation_customer" TypeName="storeModel.FK_reservation_customer" StoreEntitySet="reservation">
+      <EndProperty Name="customer">
+        <ScalarProperty Name="id" ColumnName="id_customer" />
+      </EndProperty>
+      <EndProperty Name="reservation">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_customer" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_reservation_product" TypeName="storeModel.FK_reservation_product" StoreEntitySet="reservation">
+      <EndProperty Name="product">
+        <ScalarProperty Name="id" ColumnName="id_product" />
+      </EndProperty>
+      <EndProperty Name="reservation">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_product" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_reservation_seller" TypeName="storeModel.FK_reservation_seller" StoreEntitySet="reservation">
+      <EndProperty Name="seller">
+        <ScalarProperty Name="id" ColumnName="id_seller" />
+      </EndProperty>
+      <EndProperty Name="reservation">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="id_seller" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

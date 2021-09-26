@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="storeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="appointment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="customer" Relationship="Self.FK_appointment_customer" FromRole="appointment" ToRole="customer" />
+    <NavigationProperty Name="product" Relationship="Self.FK_appointment_product" FromRole="appointment" ToRole="product" />
+    <NavigationProperty Name="seller" Relationship="Self.FK_appointment_seller" FromRole="appointment" ToRole="seller" />
+  </EntityType>
+  <EntityType Name="buy_supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="unit_value" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="total" Type="Decimal" Precision="12" Scale="2" />
+    <NavigationProperty Name="product" Relationship="Self.FK_buy_supplier_product" FromRole="buy_supplier" ToRole="product" />
+    <NavigationProperty Name="supplier" Relationship="Self.FK_buy_supplier_supplier" FromRole="buy_supplier" ToRole="supplier" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="identification_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="appointment" Relationship="Self.FK_appointment_customer" FromRole="customer" ToRole="appointment" />
+    <NavigationProperty Name="reservation" Relationship="Self.FK_reservation_customer" FromRole="customer" ToRole="reservation" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code_product" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="stock" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="appointment" Relationship="Self.FK_appointment_product" FromRole="product" ToRole="appointment" />
+    <NavigationProperty Name="buy_supplier" Relationship="Self.FK_buy_supplier_product" FromRole="product" ToRole="buy_supplier" />
+    <NavigationProperty Name="reservation" Relationship="Self.FK_reservation_product" FromRole="product" ToRole="reservation" />
+  </EntityType>
+  <EntityType Name="reservation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="unit_value" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="total" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="customer" Relationship="Self.FK_reservation_customer" FromRole="reservation" ToRole="customer" />
+    <NavigationProperty Name="product" Relationship="Self.FK_reservation_product" FromRole="reservation" ToRole="product" />
+    <NavigationProperty Name="seller" Relationship="Self.FK_reservation_seller" FromRole="reservation" ToRole="seller" />
+  </EntityType>
+  <EntityType Name="seller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dni" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="appointment" Relationship="Self.FK_appointment_seller" FromRole="seller" ToRole="appointment" />
+    <NavigationProperty Name="reservation" Relationship="Self.FK_reservation_seller" FromRole="seller" ToRole="reservation" />
+  </EntityType>
+  <EntityType Name="supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dni" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="business_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="buy_supplier" Relationship="Self.FK_buy_supplier_supplier" FromRole="supplier" ToRole="buy_supplier" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_appointment_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_appointment_product">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_appointment_seller">
+    <End Role="seller" Type="Self.seller" Multiplicity="0..1" />
+    <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_buy_supplier_product">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="buy_supplier" Type="Self.buy_supplier" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_buy_supplier_supplier">
+    <End Role="supplier" Type="Self.supplier" Multiplicity="0..1" />
+    <End Role="buy_supplier" Type="Self.buy_supplier" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_reservation_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_reservation_product">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_reservation_seller">
+    <End Role="seller" Type="Self.seller" Multiplicity="0..1" />
+    <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="storeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="appointment" EntityType="Self.appointment" />
+    <EntitySet Name="buy_supplier" EntityType="Self.buy_supplier" />
+    <EntitySet Name="customer" EntityType="Self.customer" />
+    <EntitySet Name="product" EntityType="Self.product" />
+    <EntitySet Name="reservation" EntityType="Self.reservation" />
+    <EntitySet Name="seller" EntityType="Self.seller" />
+    <EntitySet Name="supplier" EntityType="Self.supplier" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_appointment_customer" Association="Self.FK_appointment_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="appointment" EntitySet="appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_appointment_product" Association="Self.FK_appointment_product">
+      <End Role="product" EntitySet="product" />
+      <End Role="appointment" EntitySet="appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_appointment_seller" Association="Self.FK_appointment_seller">
+      <End Role="seller" EntitySet="seller" />
+      <End Role="appointment" EntitySet="appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_buy_supplier_product" Association="Self.FK_buy_supplier_product">
+      <End Role="product" EntitySet="product" />
+      <End Role="buy_supplier" EntitySet="buy_supplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_buy_supplier_supplier" Association="Self.FK_buy_supplier_supplier">
+      <End Role="supplier" EntitySet="supplier" />
+      <End Role="buy_supplier" EntitySet="buy_supplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservation_customer" Association="Self.FK_reservation_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="reservation" EntitySet="reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservation_product" Association="Self.FK_reservation_product">
+      <End Role="product" EntitySet="product" />
+      <End Role="reservation" EntitySet="reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reservation_seller" Association="Self.FK_reservation_seller">
+      <End Role="seller" EntitySet="seller" />
+      <End Role="reservation" EntitySet="reservation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
