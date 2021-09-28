@@ -181,14 +181,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\materialize.css" />
+    <Content Include="Content\materialize.min.css" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Content\StyleIcons\adidas.jpg" />
+    <Content Include="Content\StyleIcons\cahquet.jpg" />
+    <Content Include="Content\StyleIcons\facebook %281%29.png" />
+    <Content Include="Content\StyleIcons\gmail.png" />
+    <Content Include="Content\StyleIcons\gorjeo %281%29.png" />
+    <Content Include="Content\StyleIcons\hombre.jpg" />
+    <Content Include="Content\StyleIcons\instagram %281%29.png" />
+    <Content Include="Content\StyleIcons\jean.png" />
+    <Content Include="Content\StyleIcons\logo.jpg" />
+    <Content Include="Content\StyleIcons\mujer.png" />
+    <Content Include="Content\StyleIcons\nike.jpg" />
+    <Content Include="Content\StyleIcons\principal.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Models\StoreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>StoreModel.Context.cs</LastGenOutput>
@@ -199,8 +209,6 @@
       <DependentUpon>StoreModel.edmx</DependentUpon>
       <LastGenOutput>StoreModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\StoreModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>StoreModel.Designer.cs</LastGenOutput>
@@ -208,17 +216,12 @@
     <Content Include="Models\StoreModel.edmx.diagram">
       <DependentUpon>StoreModel.edmx</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\General.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\materialize.js" />
+    <Content Include="Scripts\materialize.min.js" />
+    <Content Include="Scripts\Script.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -233,6 +236,21 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\suppliers\Create.cshtml" />
+    <Content Include="Views\suppliers\Delete.cshtml" />
+    <Content Include="Views\suppliers\Details.cshtml" />
+    <Content Include="Views\suppliers\Edit.cshtml" />
+    <Content Include="Views\suppliers\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
     <Content Include="Views\appointments\Create.cshtml" />
     <Content Include="Views\appointments\Delete.cshtml" />
     <Content Include="Views\appointments\Details.cshtml" />
@@ -263,27 +281,6 @@
     <Content Include="Views\sellers\Details.cshtml" />
     <Content Include="Views\sellers\Edit.cshtml" />
     <Content Include="Views\sellers\Index.cshtml" />
-    <Content Include="Views\suppliers\Create.cshtml" />
-    <Content Include="Views\suppliers\Delete.cshtml" />
-    <Content Include="Views\suppliers\Details.cshtml" />
-    <Content Include="Views\suppliers\Edit.cshtml" />
-    <Content Include="Views\suppliers\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

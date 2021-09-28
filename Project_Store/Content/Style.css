@@ -1,0 +1,21 @@
+﻿nav {
+    background-color: #263238;
+}
+    nav .brand-logo {
+        font-family: Audiowide  !important;
+    }
+.page-footer {
+    background-color: #263238;
+}
+.black-text {
+    color: #1a96bb !important;
+}
+material-icons {
+    background-color: #00658e;
+}
+html {
+    color: #3e677b;
+}
+.btn, .btn-large, .btn-small {
+    background-color: #21c3c5;
+}

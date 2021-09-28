@@ -1,59 +1,53 @@
 ﻿@model IEnumerable<Project_Store.Models.buy_supplier>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
+<h2>Compras Proveedor</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.unit_value)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.total)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.unit_value)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.total)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.id })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+<p>
+    <a class="black-text" href='@Url.Action("Create", "buy_supplier")'><i class="material-icons icon medium">account_balance</i></a>
+</p>
+<table class="striped">
+    <tr>
+        <th>
+            Fecha
+        </th>
+        <th>
+            Cantidad
+        </th>
+        <th>
+            Valor Unitario
+        </th>
+        <th>
+            Total
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.quantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.unit_value)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.total)
+    </td>
+    <td>
+        <a class="black-text" href='@Url.Action("Edit", "buy_supplier", new { id = item.id })'><i class="material-icons">edit</i></a>
+    </td>
+    <td>|</td>
+    <td>
+        <a class="black-text" href='@Url.Action("Delete", "buy_supplier", new { id = item.id })'><i class="material-icons">delete</i></a>
+    </td>
+</tr>
+}
+
+</table>

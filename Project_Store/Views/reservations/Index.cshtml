@@ -1,41 +1,36 @@
 ﻿@model IEnumerable<Project_Store.Models.reservation>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
+<h2>Reservacion</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.unit_value)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.total)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.type)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
+<p>
+    <a class="black-text" href='@Url.Action("Create", "reservations")'><i class="material-icons icon medium">assignment</i></a>
+</p>
+<table class="striped">
+    <tr>
+        <th>
+            Fecha
+        </th>
+        <th>
+            Cantidad
+        </th>
+        <th>
+            Valor
+        </th>
+        <th>
+            Total
+        </th>
+        <th>
+            Tipo de Reserva
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.date)
@@ -53,13 +48,13 @@
                 @Html.DisplayFor(modelItem => item.type)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                <a class="black-text" href='@Url.Action("Edit", "reservations", new { id = item.id })'><i class="material-icons">edit</i></a>
+            </td>
+            <td>|</td>
+            <td>
+                <a class="black-text" href='@Url.Action("Delete", "reservations", new { id = item.id })'><i class="material-icons">delete</i></a>
             </td>
         </tr>
     }
-    
-    </table>
-</body>
-</html>
+
+</table>

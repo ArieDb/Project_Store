@@ -1,80 +1,95 @@
 ﻿@model Project_Store.Models.product
 
 @{
-    Layout = null;
+    ViewBag.Title = "Delete";
 }
 
-<!DOCTYPE html>
+<h2>Eliminar</h2>
+<div>
+    <h4>producto</h4>
+    <hr />
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>@Html.DisplayFor(model => model.code_product)</th>
+                <th>@Html.DisplayFor(model => model.name)</th>
+                <th>@Html.DisplayFor(model => model.description)</th>
+                <th>@Html.DisplayFor(model => model.stock)</th>
+                <th>@Html.DisplayFor(model => model.price)</th>
+                <th>@Html.DisplayFor(model => model.photo)</th>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.code_product)
+        </dt>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
-</head>
-<body>
-    <h3>Are you sure you want to delete this?</h3>
-    <div>
-        <h4>product</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.code_product)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.code_product)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.name)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.name)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.description)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.description)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.stock)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.stock)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.price)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.price)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.photo)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.photo)
-            </dd>
-    
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
-        }
+        <dd>
+            @Html.DisplayFor(model => model.code_product)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.photo)
+        </dd>
+
+    </dl>*@
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="row center">
+    <div class="col s12 m12 l12">
+        <button class="btn waves-effect waves-light center" type="submit" value="Delete">Eliminar<i class="material-icons right">delete</i></button> |
+        @Html.ActionLink("Volver a la Lista", "Index")
     </div>
-</body>
-</html>
+</div>
+    }
+</div>

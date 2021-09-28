@@ -1,66 +1,58 @@
 ﻿@model Project_Store.Models.reservation
 
 @{
-    Layout = null;
+    ViewBag.Title = "Details";
 }
 
-<!DOCTYPE html>
+<h2>Details</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>reservation</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.date)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.date)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.quantity)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.quantity)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.unit_value)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.unit_value)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.total)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.total)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.type)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.type)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+<div>
+    <h4>reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unit_value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unit_value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
